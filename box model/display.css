@@ -1,0 +1,16 @@
+.ex_block div{
+    border: solid;
+    width: 200px;
+    height: 200px;
+
+    padding: 20px;
+    margin: 20px;
+}
+
+.ex_inline span{
+    border: solid;
+    /* não aceita width nem height */
+    /* os outros estilos de box model (margin, padding) só funcionam nas laterais */
+    padding-inline: 3px;
+    margin: 20px;
+}

@@ -1,0 +1,14 @@
+Padding
+    Ele vai fazer um preenchimento, e dependendo do seu width, ele vai mudar a largura da sua caixa.
+
+    Com box-sizing: border-box, a largura e altura incluem o conteúdo, o padding e a borda. Ou seja, tudo está dentro do tamanho definido, facilitando o controle do layout.
+    Exemplo:
+
+    /* O elemento terá exatamente 200px de largura, incluindo padding e borda */
+    .box {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid #333;
+    box-sizing: border-box;
+    }
+

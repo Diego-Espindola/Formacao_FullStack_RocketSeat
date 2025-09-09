@@ -1,0 +1,52 @@
+.border {
+    border: groove 2px blue;
+}
+
+.border-solid {
+    border: solid 2px black;
+}
+
+.border-dashed {
+    border: dashed 2px red;
+}
+
+.border-dotted {
+    border: dotted 2px green;
+}
+
+.border-double {
+    border: double 8px purple;
+}
+
+.border-groove {
+    border: groove 8px blue;
+}
+
+.border-ridge {
+    border: ridge 8px orange;
+    box-shadow: 0 4px 16px rgba(255, 140, 0, 0.3), 0 0 0 4px rgba(255, 165, 0, 0.15);
+    background: linear-gradient(135deg, #fffbe6 0%, #ffe0b2 100%);
+    transition: box-shadow 0.3s, background 0.3s;
+    border-radius: 12px;
+    padding: 16px;
+    font-weight: bold;
+    color: #ff9800;
+    letter-spacing: 1px;
+}
+.border-ridge:hover {
+    box-shadow: 0 8px 32px rgba(255, 140, 0, 0.5), 0 0 0 8px rgba(255, 165, 0, 0.25);
+    background: linear-gradient(135deg, #fffbe6 0%, #ffd180 100%);
+    color: #300a0a;
+}
+
+.border-inset {
+    border: inset 8px gray;
+}
+
+.border-outset {
+    border: outset 8px brown;
+}
+
+.border-solid, .border-dashed, .border-dotted, .border-double, .border-groove, .border-ridge, .border-inset, .border-outset {
+    margin-top: 20px;
+}

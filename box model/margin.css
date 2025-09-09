@@ -1,0 +1,15 @@
+div, span {
+    border: 1px solid black;
+    width: 50%    ;
+}
+
+.margin {
+    /* margin: 30px; */
+    /* margin-top: 20px; */
+    /* margin-left: 60px; */
+    /* margin: 30px 25px 10px 2px;  */    /* Sempre segue a ordem: cima, direita, baixo, esquerda -- como um relogio */
+    /* margin: auto; */ /* se eu usar uma largura nos meus elementos, ele centraliza o elemento na tela  SOMENTE ELEMENTOS EM BLOCO E NÃO FUNCIONA NA VERTICAL */
+    margin: 20px 0px 50px; /* as margens sempre colapsam, ou seja, a maior margem é a que vale  */
+    /* já em margens laterais, elas não colapsam  */
+}
+
