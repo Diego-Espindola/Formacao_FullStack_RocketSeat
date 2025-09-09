@@ -1,0 +1,16 @@
+/* Combinator
+
+    - Descendent
+        div p ( pra modificar todo p dentro de uma div )
+    - List
+        span, mark (pra modificar mais de um ao mesmo tempo)
+    - Next sibling
+        h2 + p  (só muda o último.. vai mudar todo p que vem depois de h2)
+    - Child
+        aside > ul   (ou seja, somente o primeiro nivel de ul dentro de um aside)
+
+*/
+
+p {
+    margin-top: 50px;
+}

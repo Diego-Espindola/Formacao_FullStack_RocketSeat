@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cheat sheet: Especificidade CSS</title>
+  <link rel="stylesheet" href="exemplo_especificidade.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Cheat sheet — Especificidade CSS</h1>
+    <p class="lead">Guarde este arquivo para consultar rapidamente a ordem de prioridade, exemplos e as observações sobre <code>!important</code> e <code>:not()</code>.</p>
+
+    <div class="card">
+      <h2 style="margin-top:0;font-size:1.1rem">Resumo rápido (do menor para o maior)</h2>
+      <ul>
+        <li>Seletores universais <code>*</code> (mais fraco)</li>
+        <li>Seletores de tipo (elementos) — <code>div</code>, <code>p</code></li>
+        <li>Classes, atributos e pseudo-classes — <code>.classe</code>, <code>[attr]</code>, <code>:hover</code></li>
+        <li>IDs — <code>#meuID</code></li>
+        <li>Estilo inline — <code>style=""</code></li>
+        <li><strong>!important</strong> — exceção: ganha de todas as regras normais (ver observações)</li>
+      </ul>
+    </div>
+
+    <div class="card row">
+      <div>
+        <h3 style="margin:0 0 6px">Tabelinha de especificidade (formato: a,b,c,d)</h3>
+        <table>
+          <thead>
+            <tr><th>Seletor</th><th>Exemplo</th><th>Especificidade</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Inline</td><td><code>style=""</code></td><td><strong>1,0,0,0</strong></td></tr>
+            <tr><td>ID</td><td><code>#meuID</code></td><td>0,1,0,0</td></tr>
+            <tr><td>Classes / atributos / pseudo-classes</td><td><code>.classe</code>, <code>[type="text"]</code>, <code>:hover</code></td><td>0,0,1,0</td></tr>
+            <tr><td>Tipo / elementos / pseudo-elementos</td><td><code>div</code>, <code>p</code>, <code>::before</code></td><td>0,0,0,1</td></tr>
+            <tr><td>Universal</td><td><code>*</code></td><td>0,0,0,0</td></tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top:10px;color:var(--muted)"><strong>Regras:</strong> Some as partes para seletores combinados. Se empatar, o último declarado vence.</p>
+
+        <h3 style="margin:6px 0">Observações importantes</h3>
+        <ul>
+          <li><strong><code>!important</code></strong> não altera especificidade — ele simplesmente faz a declaração ganhar de outras sem <code>!important</code>. Se houver empate entre dois <code>!important</code>, aplica-se a especificidade normal e depois a ordem (último declarado vence).</li>
+          <li><strong><code>:not()</code></strong> <em>não</em> acrescenta ao contador de pseudo-classes. Porém, o conteúdo dentro de <code>:not(...)</code> conta como se estivesse fora.</li>
+          <li>Evite depender de <code>!important</code> — prefira tornar o seletor mais específico ou reorganizar o CSS.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 6px">Exemplo visual</h3>
+        <div class="example">
+          <div class="box">
+            <strong>HTML:</strong>
+            <pre>&lt;div id="meuID" class="pai"&gt;
+  &lt;p class="classe"&gt;Alvo de exemplo&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p class="classe importante"&gt;Exemplo com !important&lt;/p&gt;</pre>
+          </div>
+
+          <div class="box">
+            <strong>Como o navegador decide (ordem aplicada):</strong>
+            <ol>
+              <li>Regras de tipo (<code>p</code>) — especificidade <code>0,0,0,1</code>.</li>
+              <li>Regras de classe (<code>.classe</code>) — especificidade <code>0,0,1,0</code>.</li>
+              <li>Regras por ID (<code>#meuID p</code>) — especificidade <code>0,1,0,0</code>.</li>
+              <li>Inline — <code>style="..."</code> — especificidade <code>1,0,0,0</code>.</li>
+              <li><code>!important</code> vence todas as regras sem <code>!important</code>.</li>
+            </ol>
+          </div>
+
+          <div>
+            <strong>Simulação (visual):</strong>
+            <div class="demo-target" id="visual-sim">
+              <div id="meuID" class="pai">
+                <p class="classe">Este parágrafo é afetado por <code>p</code>, <code>.classe</code> e <code>#meuID</code>.</p>
+              </div>
+              <p class="classe importante">Este outro parágrafo tem <code>.importante { color: ... !important }</code></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 6px">Exemplos práticos e notas finais</h3>
+      <ul>
+        <li><code>div p</code> (dois seletores do tipo) = 0,0,0,2 (soma das partes de elemento).</li>
+        <li><code>#id .classe[type="text"]:hover</code> = 0,1,2,0 (1 ID + 2 em classes/atributos/pseudo-classes).</li>
+        <li><code>a:link:not(.externo)</code> — :not() não acrescenta, mas <code>.externo</code> dentro conta: 0,0,1,1.</li>
+        <li>Dica: se estiver brigando com regras herdadas, abra o DevTools, selecione o elemento e veja a coluna "Especificidade" (ou calcule os números) e a regra que venceu).</li>
+      </ul>
+
+      <p style="margin-top:10px;color:var(--muted)">Guarde este arquivo localmente (salve como <code>especificidade-cheatsheet.html</code>) para consultar sempre que precisar.</p>
+    </div>
+
+  </div>
+</body>
+</html>

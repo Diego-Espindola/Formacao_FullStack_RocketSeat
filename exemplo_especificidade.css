@@ -1,0 +1,148 @@
+/* especificidade: 0,0,0,1 */
+/* p {
+  color: blue;
+} */
+
+/* especificidade: 0,0,1,0 */
+/* .texto {
+  color: green;
+} */
+
+/* especificidade: 0,1,0,0 */
+/* #principal {
+  color: red;
+} */
+
+/* especificidade: 1,0,0,0 */
+/* <style>
+<p style="color: orange;"> */
+
+
+
+:root {
+    --bg: #0f1724;
+    --card: #0b1220;
+    --muted: #9aa6bf;
+    --accent: #7dd3fc
+}
+
+body {
+    font-family: Inter, Segoe UI, Helvetica, Arial, sans-serif;
+    background: linear-gradient(180deg, #3b2e2e 0%, #002fff 100%);
+    color: #e6eef8;
+    margin: 0;
+    padding: 32px
+}
+
+.wrap {
+    max-width: 900px;
+    margin: 0 auto
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin: 0 0 8px
+}
+
+p.lead {
+    margin: 0 0 18px;
+    color: var(--muted)
+}
+
+.card {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, .6);
+    margin-bottom: 14px
+}
+
+pre {
+    background: #071226;
+    padding: 12px;
+    border-radius: 6px;
+    overflow: auto
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 12px;
+    align-items: start
+}
+
+.example {
+    padding: 12px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #07192a, #071224)
+}
+
+.box {
+    padding: 12px;
+    border-radius: 6px;
+    background: #051522;
+    margin-bottom: 10px
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+td,
+th {
+    padding: 6px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, .04)
+}
+
+th {
+    color: var(--accent);
+    text-align: left
+}
+
+code {
+    background: rgba(255, 255, 255, .03);
+    padding: 2px 6px;
+    border-radius: 4px
+}
+
+/* ---------- Exemplos estilizados (estes simulam aplicação de regras) ---------- */
+.demo-target {
+    padding: 10px;
+    border-radius: 6px;
+    background: #fff;
+    color: #111;
+    margin-top: 8px
+}
+
+/* regras que exemplificam diferentes especificidades */
+p {
+    color: #0b84ff;
+}
+
+/* tipo: especificidade 0,0,0,1 */
+.classe {
+    color: #0dbb7d;
+}
+
+/* classe: 0,0,1,0 */
+p.classe {
+    font-weight: 700;
+}
+
+/* combinacao: soma das especificidades */
+#meuID {
+    color: #ff6b6b;
+}
+
+/* id: 0,1,0,0 */
+/* regra inline simulada (não aplicável aqui) */
+/* !important example */
+.importante {
+    color: #ffdd57 !important;
+}
+
+/* :not example (a pseudo-class :not não adiciona pontos, mas o conteúdo sim) */
+.pai :not(.excluido) {
+    text-decoration: underline;
+}
