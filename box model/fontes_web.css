@@ -1,0 +1,14 @@
+/* Fonte importada do Google Fonts */
+.fonte-roboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.fonte-roboto-bold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.fonte-padrao {
+    font-family: Arial, sans-serif;
+}
