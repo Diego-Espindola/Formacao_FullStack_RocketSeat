@@ -75,14 +75,18 @@ section#about p + p {
   margin-top: 12px;
 }
 
-
 footer {
-    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     text-align: center;
     padding-bottom: 48px;
     color: #F0E8C2;
+    gap: 8px;
 }
+
 footer img {
-    vertical-align: middle;
+    display: block;
+    margin: 0 auto;
 }
