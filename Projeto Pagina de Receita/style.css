@@ -82,5 +82,7 @@ footer {
     text-align: center;
     padding-bottom: 48px;
     color: #F0E8C2;
-
+}
+footer img {
+    vertical-align: middle;
 }
