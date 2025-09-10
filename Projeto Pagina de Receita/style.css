@@ -10,14 +10,26 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
+    background-color: #573824;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background-image: url('assets/bg-image.jpg');
     background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    filter: blur(10px);
+    z-index: -1;
 }
 
 #page {
-    margin: 48px auto;
+    margin: 48px auto 28px;
     background-color: #F0E8C2;
     width: 800px;
     box-sizing: border-box;
@@ -61,4 +73,14 @@ section + section {
 
 section#about p + p {
   margin-top: 12px;
+}
+
+
+footer {
+    margin-top: auto;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 48px;
+    color: #F0E8C2;
+
 }
