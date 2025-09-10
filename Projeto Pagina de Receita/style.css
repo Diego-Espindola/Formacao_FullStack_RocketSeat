@@ -1,0 +1,22 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+}
+
+#page img {
+    border-radius: 16px;
+}
+
+#page {
+    margin: 48px 240px;
+    background-color: white;
+    width: auto;
+    height: auto;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 24px;
+}
