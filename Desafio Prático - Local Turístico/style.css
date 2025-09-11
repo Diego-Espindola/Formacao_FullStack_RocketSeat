@@ -1,0 +1,154 @@
+:root {
+    --text-primary: #1B1B1B;
+    --text-secondary: #333333;
+    font-family: "Open Sans";
+    line-height: auto;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    justify-content: center;
+    vertical-align: top;
+    align-items: center;
+    overflow-y: auto;
+    position: absolute;
+    background-color: #F5F4F0;  
+}
+
+#page {
+    margin: 88px 80px 65px;
+    box-sizing: border-box;
+    height: 3054px;
+    width: 1120px;
+}
+
+span {
+    color: #E1624F;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.beginning h1 {
+    margin-top: 8px;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: auto;
+    color: var(--text-primary);
+}
+
+.imgCity img {
+    width: 1120px;
+    height: 660px;
+    border-radius: 28px;
+    margin: 44px 0 24px;
+}
+
+.imgCity {
+    text-align: center;
+    width: 100%;
+}
+
+.imgCity p {
+    color: var(--text-secondary);
+    vertical-align: top;
+    font-style: italic;
+    text-align: center;
+    width: 1120px;
+    height: 37px;
+}
+
+main {
+    margin: 40px 0px;
+    padding-top: 64px;
+    border-top: 1px solid #D9D9D9;
+}
+
+.history h2 {
+    margin-top: 2px;
+    margin-bottom: 8px;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: auto;
+    color: var(--text-primary);
+}
+
+main img {
+    width: 1120px;
+    height: 350px;
+    align-content: top-right;
+    border-radius: 28px;
+}
+
+.haedongTemple img {
+    margin: 64px 0 20px;
+}
+
+.h3 {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: auto;
+    color: var(--text-primary);
+}
+
+ol {
+    list-style-position: inside;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol li {
+    padding-left: 8px;
+}
+
+ul span {
+    font-size: 16px;
+    font-weight: regular;
+}
+
+.haedongTemple p {
+    margin-top: 4px;
+}
+
+#goodFor p{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.beomeosaTemple, .yongdusanTemple img {
+    margin: 48px 0 20px;
+}
+
+hr {
+    border: 1px solid #D9D9D9;
+    margin-bottom: 40px;
+}
+hr + p {
+    text-align: center;
+}
+
+footer span {
+    all: unset;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 48px;
+    color: var(--text-secondary);
+    gap: 8px;
+}
+
+footer img {
+    display: block;
+    margin: 0 auto;
+}
